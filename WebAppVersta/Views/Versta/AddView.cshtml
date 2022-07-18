@@ -1,0 +1,39 @@
+﻿@using WebAppVersta.Domain
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Order
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Заказ</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="formRoot">
+        <form class="form1form" asp-area="" asp-controller="Versta" asp-action="AddOrder" method="post" enctype="multipart/form-data">
+            <label for="senderTown">Город отправителя</label>
+            <input class="form1" id="senderTown"  type="text" name="senderTown" asp-for="senderTown"/>
+
+            <label for="senderAddress">Адрес отправителя</label>
+            <input class="form1" id="senderAddress" type="text" name="senderAddress" asp-for="senderAddress" />
+
+            <label for="receiverTown">Город получателя</label>
+            <input class="form1" id="receiverTown" type="text" name="receiverTown" asp-for="recieverTown" />
+
+            <label for="receiverAddress">Адрес получателя</label>
+            <input class="form1" id="receiverAddress" type="text" name="receiverAddress" asp-for="recieverAddress" />
+
+            <label for="weight">Вес груза</label>
+            <input class="form1" id="weight" type="text" name="weight" asp-for="weight" />
+
+            <label for="date">Дата</label>
+            <input class="form1" id="date" type="date" name="date" asp-for="date" />
+
+            <input class="form1" type="submit" value="Отправить запрос!">
+        </form>
+    </div>
+</body>
+</html>
+
+

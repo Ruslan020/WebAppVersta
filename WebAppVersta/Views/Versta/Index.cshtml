@@ -1,0 +1,48 @@
+﻿@using WebAppVersta.Domain
+@using WebAppVersta.Controllers
+@using Microsoft.AspNetCore.Mvc;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IQueryable<Order>
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Заказ</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/js/site.js"></script>
+</head>
+<body>
+    <div class="">
+        <button class="newOrder" onclick="comeToNewOrderPage();">Создать новый заказ</button>
+        <table class="ordersTable">
+            <thead>
+                <tr>
+                    <td>Код заказа</td>
+                    <td>Город отправителя</td>
+                    <td>Адрес отправителя</td>
+                    <td>Город получателя</td>
+                    <td>Адрес отправителя</td>
+                    <td>Вес</td>
+                    <td>Дата забора груза</td>
+                </tr>
+            </thead>
+            @foreach (Order orderItem in Model)
+            {
+        <tr>
+            <td>@orderItem.id</td>
+            <td>@orderItem.senderTown</td>
+            <td>@orderItem.senderAddress</td>
+            <td>@orderItem.recieverTown</td>
+            <td>@orderItem.recieverAddress</td>
+            <td>@orderItem.weight</td>
+            <td>@orderItem.date</td>
+        </tr>
+            }
+        </table>
+
+    </div>
+</body>
+</html>
+
+
